@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+<div class="book-title">
+    <h2><a href="#">{{ book.title }}</a></h2>
+    <p>{{ book.author }}</p>
+    <p>Price: {{ book.price }}</p>
+</div>
+
+{% endblock content %}
