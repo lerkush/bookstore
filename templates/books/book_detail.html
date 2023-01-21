@@ -1,12 +1,20 @@
 {% extends '_base.html' %}
 
-{% block title %}{{ object.title }}{% endblock title %}
+{% block title %}{{ book.title }}{% endblock title %}
 
 {% block content %}
 <div class="book-title">
     <h2><a href="#">{{ book.title }}</a></h2>
     <p>{{ book.author }}</p>
     <p>Price: {{ book.price }}</p>
+</div>
+<div>
+    <h3>Reviews</h3>
+    <ul>
+        {% for review in book.reviews.all %}
+        <li>{{ review.review }} ({{ review.author }})</li>
+        {% endfor %}
+    </ul>
 </div>
 
 {% endblock content %}
